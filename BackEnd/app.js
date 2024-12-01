@@ -7,7 +7,7 @@ require('dotenv').config();
 const projectsRoutes = require('./routes/projects');
 const userRoutes = require('./routes/user');
 
-mongoose.connect('mongodb+srv://admin:R3Kv9ond0w2VWCgK@monvieuxgrimoire.dtxso.mongodb.net/portfolio?retryWrites=true&w=majority&appName=MonVieuxGrimoire' ,
+mongoose.connect(process.env.MONGO_URI ,
     { useNewUrlParser: true,
       useUnifiedTopology: true })
     .then(() => console.log('Connexion à MongoDB réussie !'))
